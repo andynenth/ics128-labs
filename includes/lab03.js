@@ -66,10 +66,13 @@ labDay = new Date( mslabDay + msDay );
 // 20.
 console.log(labDay);
 
-let month = 12; //December
-let year = 2018;
-let days = daysInMonth(2018,12);
+let m = 12; //December
+let y = 2018;
+let d = daysInMonth(2018,12);
+
+console.log(d);
 //console.log(new Date(year, month-1));
+//console.log(getWeekendsInMonth(m, y));
 
 function daysInMonth (year, month) { // Use 1 for Jan, 2 for Feb, etc.
     return new Date(year, month, 0).getDate();
@@ -83,6 +86,7 @@ function isWeekday(year, month, day) {
 
 function getWeekendsInMonth(month, year){
     var days = daysInMonth(month, year);
+    console.log(days);
     var weekends = 0;
     for(var i=0; i< days; i++){
         if(!isWeekday(year, month, i+1)){
@@ -91,8 +95,8 @@ function getWeekendsInMonth(month, year){
     }
     return weekends;
 }
-console.log(getWeekendsInMonth(month,year));
 
 
-let result2 =days;
+
+let result2 ="9";
 document.getElementById("dateFunction").innerHTML = result2;
