@@ -12,5 +12,5 @@ let totalAmount = amountOfMoney*(1+taxRate/100);
 
 document.getElementById("amountOfMoney").innerHTML = "$"+amountOfMoney;
 document.getElementById("taxRate").innerHTML = taxRate+"%";
-document.getElementById("totalAmount").innerHTML = "$"+parseFloat(totalAmount).toFixed(2);;
+document.getElementById("totalAmount").innerHTML = "$"+parseFloat(totalAmount).toFixed(2);
 
