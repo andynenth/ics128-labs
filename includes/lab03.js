@@ -122,3 +122,32 @@ let result2 = "Month: " + monthString + "<br>" +
 "Pay: $" + parseFloat(pay).toFixed(2);
 
 document.getElementById("dateFunction").innerHTML = result2;
+
+// Part 2
+var investment = 10;
+var annualRate = 4;
+var years = 5;
+
+let result3 = calcFutureValue(investment, annualRate, years) + "<br><br>" +
+calcFutureValue(0, annualRate, years) + "<br><br>" +
+calcFutureValue(investment, 0, years);
+
+document.getElementById("errorHandling").innerHTML = result3;
+
+function calcFutureValue(principle, rate, years){
+    try {
+        if (principle <= 0) throw new Error("Principle value must be greater than zero");
+        if (rate <= 0) throw new Error("Rate value must be greater than zero");
+        if (years <= 0) throw new Error("Years value must be greater than zero");
+
+        var monthlyRate = (rate/12)/100;
+        var months = years*12;
+        var futureValue = 0;
+        for (var i = 0; i < months; i++){
+            futureValue = (futureValue + principle)*(1+monthlyRate);
+        }
+        return parseFloat(futureValue).toFixed(2);
+    } catch(e){
+        return "Error: "+e.message+".";
+    }
+}
